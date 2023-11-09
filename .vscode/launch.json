@@ -10,7 +10,8 @@
       "name": "Запустить программу",
       "skipFiles": ["<node_internals>/**"],
       // "program": "${workspaceFolder}\\src\\stack.js"
-      "program": "${workspaceFolder}\\src\\queue.js"
+      // "program": "${workspaceFolder}\\src\\queue.js"
+      "program": "${workspaceFolder}\\src\\remove-from-list.js"
     }
   ]
 }
