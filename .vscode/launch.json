@@ -8,10 +8,9 @@
       "type": "node",
       "request": "launch",
       "name": "Запустить программу",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\src\\stack.js"
+      "skipFiles": ["<node_internals>/**"],
+      // "program": "${workspaceFolder}\\src\\stack.js"
+      "program": "${workspaceFolder}\\src\\queue.js"
     }
   ]
 }
