@@ -22,7 +22,7 @@ class BinarySearchTree {
       return;
     }
 
-    let currNode = this.rootNode; // переменная для перебора нод
+    let currNode = this.rootNode;
 
     while (currNode) {
       if (newNode.data < currNode.data) {
@@ -41,9 +41,21 @@ class BinarySearchTree {
     }
   }
 
-  has(/* data */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  has(data) {
+    if (!this.root) {
+      return false;
+    }
+    let currNode = this.rootNode;
+    while (currNode) {
+      if (data === currNode.data) {
+        return true;
+      } else if (data < currNode.data) {
+        currNode = currNode.left;
+      } else if (data > currNode.data) {
+        currNode = currNode.right;
+      }
+    }
+    return false;
   }
 
   find(/* data */) {
@@ -80,19 +92,33 @@ class BinarySearchTree {
 }
 
 const tree = new BinarySearchTree();
-tree.add(8);
-tree.add(7);
 tree.add(9);
-tree.add(5);
-tree.add(10);
-tree.add(20);
-tree.add(6);
+tree.add(14);
+tree.add(54);
 tree.add(2);
-tree.add(11);
+tree.add(6);
+tree.add(8);
+tree.add(31);
+tree.add(1);
+console.log(`🚀 ~ tree.has(54:`, tree.has(54));
+console.log(`🚀 ~ tree.has(8):`, tree.has(8));
+console.log(`🚀 ~ tree.has(7):`, tree.has(7)); // false)
+console.log(`🚀 ~ tree.has(4):`, tree.has(4)); // false)
 
-console.log(`🚀 ~ tree.max():`, tree.max());
-console.log(`🚀 ~ tree.min():`, tree.min());
-console.log(`🚀 ~ tree:`, tree);
+// tree.add(8);
+// tree.add(7);
+// tree.add(9);
+// tree.add(5);
+// tree.add(10);
+// tree.add(20);
+// tree.add(6);
+// tree.add(2);
+// tree.add(11);
+
+// console.log(`🚀 ~ tree.max():`, tree.max());
+// console.log(`🚀 ~ tree.min():`, tree.min());
+// console.log(`🚀 ~ tree:`, tree.has(20));
+// console.log(`🚀 ~ tree:`, tree.has(20));
 
 module.exports = {
   BinarySearchTree,
