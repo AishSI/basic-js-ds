@@ -42,20 +42,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    if (!this.root) {
-      return false;
-    }
-    let currNode = this.rootNode;
-    while (currNode) {
-      if (data === currNode.data) {
-        return true;
-      } else if (data < currNode.data) {
-        currNode = currNode.left;
-      } else if (data > currNode.data) {
-        currNode = currNode.right;
-      }
-    }
-    return false;
+    return Boolean(this.find(data));
   }
 
   find(data) {
