@@ -67,22 +67,20 @@ class BinarySearchTree {
     // remove line with error and write your code here
   }
 
-  min() {
-    if (!this.rootNode) {
+  min(currNode = this.rootNode) {
+    if (!currNode) {
       return;
     }
-    let currNode = this.rootNode;
     while (currNode.left) {
       currNode = currNode.left;
     }
     return currNode.data;
   }
 
-  max() {
-    if (!this.rootNode) {
+  max(currNode = this.rootNode) {
+    if (!currNode) {
       return;
     }
-    let currNode = this.rootNode;
     while (currNode.right) {
       currNode = currNode.right;
     }
@@ -92,32 +90,38 @@ class BinarySearchTree {
 
 const tree = new BinarySearchTree();
 tree.add(9);
+tree.add(9);
 tree.add(14);
-tree.add(54);
 tree.add(2);
 tree.add(6);
+tree.add(128);
 tree.add(8);
 tree.add(31);
+tree.add(54);
 tree.add(1);
-console.log(`🚀 ~ tree.has(54:`, tree.has(54));
-console.log(`🚀 ~ tree.has(8):`, tree.has(8));
-console.log(`🚀 ~ tree.has(7):`, tree.has(7)); // false)
-console.log(`🚀 ~ tree.has(4):`, tree.has(4)); // false)
-
-// tree.add(8);
-// tree.add(7);
-// tree.add(9);
-// tree.add(5);
-// tree.add(10);
-// tree.add(20);
-// tree.add(6);
-// tree.add(2);
-// tree.add(11);
-
-// console.log(`🚀 ~ tree.max():`, tree.max());
-// console.log(`🚀 ~ tree.min():`, tree.min());
-// console.log(`🚀 ~ tree:`, tree.has(20));
-// console.log(`🚀 ~ tree:`, tree.has(20));
+// tree.remove(14);
+// tree.remove(8);
+// tree.remove(9);
+console.log(`max - ${tree.max()}`); // 128
+console.log(`min - ${tree.min()}`); // 1
+// //false);
+// console.log(`🚀 ~ tree.has(14):`, tree.has(14));
+// //false);
+// console.log(`🚀 ~ tree.has(8):`, tree.has(8));
+// //false);
+// console.log(`🚀 ~ tree.has(9):`, tree.has(9));
+// //true);
+// console.log(`🚀 ~ tree.has(2):`, tree.has(2));
+// //true);
+// console.log(`🚀 ~ tree.has(6):`, tree.has(6));
+// //true);
+// console.log(`🚀 ~ tree.has(128):`, tree.has(128));
+// //true);
+// console.log(`🚀 ~ tree.has(31):`, tree.has(31));
+// //true);
+// console.log(`🚀 ~ tree.has(54):`, tree.has(54));
+// //true);
+// console.log(`🚀 ~ tree.has(1):`, tree.has(1));
 
 module.exports = {
   BinarySearchTree,
