@@ -54,11 +54,8 @@ class BinarySearchTree {
     while (currNode) {
       if (data === currNode.data) {
         return currNode;
-      } else if (data < currNode.data) {
-        currNode = currNode.left;
-      } else if (data > currNode.data) {
-        currNode = currNode.right;
       }
+      currNode = data < currNode.data ? currNode.left : currNode.right;
     }
     return null;
   }
